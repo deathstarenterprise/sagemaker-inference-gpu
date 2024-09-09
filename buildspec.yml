@@ -1,0 +1,38 @@
+version: 0.2
+
+env:
+  variables:
+    LC_ALL: "C.UTF-8"
+    LANG: "C.UTF-8"
+
+phases:
+  pre_build:
+    commands:
+      - start-dockerd
+
+  build:
+    commands:
+      # run linters
+      - TOX_PARALLEL_NO_SPINNER=1
+      - tox -e flake8,black-check,pylint --parallel all
+
+      # run README check
+      - tox -e twine
+
+      # run unit tests
+      - tox -e py38,py39,py310 -- test/unit
+
+      # build dummy container
+      - python setup.py sdist
+      - cp dist/sagemaker_inference_gpu-*.tar.gz test/container/sagemaker_inference_gpu.tar.gz
+      - cd test/container
+      - docker build -t sagemaker-inference-toolkit-test:dummy -f dummy/Dockerfile .
+      - rm sagemaker_inference_gpu.tar.gz
+
+      # build mxnet container
+      - docker build -t sagemaker-inference-toolkit-test:mxnet -f mxnet/Dockerfile .
+
+      - cd ../..
+
+      # run local integration tests
+      - IGNORE_COVERAGE=- tox -e py38,py39,py310 -- test/integration/local
