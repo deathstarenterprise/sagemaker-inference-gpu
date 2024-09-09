@@ -2,7 +2,7 @@
 
 ---
 
-**Altered to work with multi-model-server-gpu**
+## Altered to work with multi-model-server-gpu
 
 **Everything else is the same, except for the command in src/sagemaker_inference_gpu/model_server.py:**
 

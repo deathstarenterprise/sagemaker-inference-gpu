@@ -15,7 +15,7 @@ from __future__ import absolute_import
 
 import os
 
-from sagemaker_inference.transformer import Transformer
+from sagemaker_inference_gpu.transformer import Transformer
 
 PYTHON_PATH_ENV = "PYTHONPATH"
 

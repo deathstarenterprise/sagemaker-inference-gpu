@@ -18,7 +18,7 @@ from __future__ import absolute_import
 import os
 from typing import Optional
 
-from sagemaker_inference import content_types, logging, parameters
+from sagemaker_inference_gpu import content_types, logging, parameters
 
 logger = logging.get_logger()
 

@@ -15,7 +15,7 @@ which provides a bare-bones implementation of default inference functions.
 """
 import textwrap
 
-from sagemaker_inference import decoder, encoder, errors, utils
+from sagemaker_inference_gpu import decoder, encoder, errors, utils
 
 
 class DefaultInferenceHandler(object):

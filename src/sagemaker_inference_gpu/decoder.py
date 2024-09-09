@@ -20,7 +20,7 @@ import numpy as np
 import scipy.sparse
 from six import BytesIO, StringIO
 
-from sagemaker_inference import content_types, errors
+from sagemaker_inference_gpu import content_types, errors
 
 
 def _json_to_numpy(string_like, dtype=None):  # type: (str) -> np.array

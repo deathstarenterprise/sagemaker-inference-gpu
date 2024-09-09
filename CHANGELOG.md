@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.10.2
+
+### Fork from original AWS version
+
+ * changing multi-model-server command to reference multi-model-server-gpu
+
 ## v1.10.1 (2023-10-25)
 
 ### Bug Fixes and Other Changes

@@ -19,7 +19,7 @@ import json
 import numpy as np
 from six import BytesIO, StringIO
 
-from sagemaker_inference import content_types, errors
+from sagemaker_inference_gpu import content_types, errors
 
 
 def _array_to_json(array_like):

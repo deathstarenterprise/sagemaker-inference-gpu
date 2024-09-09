@@ -47,8 +47,8 @@ setuptools.setup(
     py_modules=[os.path.splitext(os.path.basename(path))[0] for path in glob("src/*.py")],
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author="Amazon Web Services",
-    url="https://github.com/aws/sagemaker-inference-toolkit/",
+    author="Amazon Web Services + Blake Donahoo",
+    url="https://github.com/deathstarenterprise/sagemaker-inference-gpu/",
     license="Apache License 2.0",
     classifiers=[
         "Intended Audience :: Developers",
